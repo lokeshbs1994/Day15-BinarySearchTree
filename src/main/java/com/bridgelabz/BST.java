@@ -1,7 +1,5 @@
-/*@Purpose : Ability to create a BST by adding 56 and then
- * adding 30 & 70 - Use INode to create My Binary Node - Note the key has to extend comparable to
- * compare and determine left or right node
- * - First add 56 as root node so 30 will be added to left and 70 to right
+/*@Purpose : Ability to create the binary tree shown in the figure
+ * - Check if all are added with using size method in Binary Tree
  * @File : Binary Search Tree
  * @Author : Lokesh B S
  */
@@ -25,15 +23,14 @@ class Node {
 
 }
 
-/*
- * @Purpose : Insert Element in BST
- *
- * @Param : Node,Data
- *
- * @return : Node
- */
 public class BST {
+    int size = 0;
 
+    /*
+     * @Purpose : Insert Elements in BST
+     *
+     * @Return : Node
+     */
     public Node insert(Node node, int data) {
 
         if (node == null) {
@@ -45,14 +42,26 @@ public class BST {
         } else if (data > node.data) {
             node.right = insert(node.right, data);
         }
+
         return node;
     }
 
+    /*
+     * @Purpose : Create New Node For Elements in BST
+     *
+     * @Return : MyNode
+     */
     private Node createNewNode(int data) {
         Node mynode = new Node(data);
+        size += 1;
         return mynode;
     }
 
+    /*
+     * @Purpose : Print InOrder Traversal in BST
+     *
+     * @Return : Null
+     */
     public void printInorder(Node node) {
         if (node == null) {
             return;
@@ -62,4 +71,14 @@ public class BST {
         printInorder(node.right);
 
     }
+
+    /*
+     * @Purpose : Getting Size Of BST
+     *
+     * @Return : Size
+     */
+    public int size() {
+        return size;
+    }
+
 }
