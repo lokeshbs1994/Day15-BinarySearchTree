@@ -1,5 +1,5 @@
-/*@Purpose : Ability to create the binary tree shown in the figure
- * - Check if all are added with using size method in Binary Tree
+/*@Purpose : Ability to search 63 in the Binary Tree
+ * - Implement Search method and recursively search left or right nodes to find 63
  * @File : Binary Search Tree
  * @Author : Lokesh B S
  */
@@ -80,5 +80,29 @@ public class BST {
     public int size() {
         return size;
     }
+    /*
+     * @Purpose : Search Element In BST
+     *
+     * @Return : Boolean,IsPresent
+     */
 
+    public boolean search(Node node, int data) {
+        if (node == null) {
+            return false;
+        }
+
+        boolean isPresent = false;
+        while (node != null) {
+            if (data < node.data) {
+                node = node.left;
+            } else if (data > node.data) {
+                node = node.right;
+            } else {
+                isPresent = true;
+                break;
+            }
+        }
+
+        return isPresent;
+    }
 }

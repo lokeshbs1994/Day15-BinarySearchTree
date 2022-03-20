@@ -1,5 +1,5 @@
-/*@Purpose : Ability to create the binary tree shown in the figure
- * - Check if all are added with using size method in Binary Tree
+/*@Purpose : Ability to search 63 in the Binary Tree
+ * - Implement Search method and recursively search left or right nodes to find 63
  * @File : Binary Search Tree
  * @Author : Akshay Kumar
  */
@@ -7,7 +7,7 @@ package com.bridgelabz;
 
 public class BSTImplementation {
     /*
-     * @Purpose : Insert Elements in BST
+     * @Purpose : Insert & Search And Getting Size Of Elements in BST
      */
     public static void main(String[] args) {
         BST tree = new BST();
@@ -29,6 +29,8 @@ public class BSTImplementation {
         tree.printInorder(root);
         System.out.println();
         System.out.println("Number of Nodes in binary tree :" + tree.size());
+        System.out.println(tree.search(root, 63));
+        System.out.println(tree.search(root, 55));
     }
 
 }
